@@ -1,5 +1,11 @@
 <h1>Sobre TypeScript</h1>
 
+    1 . npm create vite@latest .
+    2 . Escolher React com TS
+    3 . Versão vite que funciona na porta 3000: devDependencies": {"vite": "^2.9.9"}
+    4 . Trocar na pasta package.json
+    5 . Intalar depências: npm install 
+
 ## <h2>O que é o TypeScript?</h2>
 <p>
     O TypeScript foi criado pela Microsoft para trazer um superset de tipagens para o JavaScript.
