@@ -83,8 +83,9 @@
 - < E > → Representando Element
 
 
+<p>Exemplo de um trecho de código utilizando generics:</p>
 <p>
-Exemplo de um trecho de código utilizando generics:
+    {
     function useState< T >() {
         let state: T;
 
@@ -103,6 +104,7 @@ Exemplo de um trecho de código utilizando generics:
     newState.get();
     newState.set("João");
     newState.set(123);
+    }
 </p>
 
 ## <h2></h2>
