@@ -85,7 +85,7 @@
 <p>Exemplo de um trecho de código utilizando generics:</p>
 
 <p>
-        function useState< T >() {
+            function useState< T >() {
             let state: T;
 
             function get(){
