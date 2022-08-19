@@ -84,8 +84,7 @@
 
 
 <p>Exemplo de um trecho de código utilizando generics:</p>
-<p>
-    {
+
     function useState< T >() {
         let state: T;
 
@@ -104,8 +103,7 @@
     newState.get();
     newState.set("João");
     newState.set(123);
-    }
-</p>
+
 
 ## <h2></h2>
 <p></p>
