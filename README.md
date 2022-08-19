@@ -87,7 +87,7 @@
 
 <p>Exemplo de um trecho de código utilizando generics:</p>
 
-    function useState< T >() {
+    function useState<T>() {
         let state: T;
 
         function get(){
@@ -271,14 +271,70 @@
     // Fazendo união com interfaces
     interface IAccount extends IUser, IPayment {}
 
-## <h2></h2>
-<p></p>
+## <h2>Tipando Componente</h2>
+<p>Definindo tipagens para o componente Card:</p>
 
-## <h2></h2>
-<p></p>
+    import './styles.css';
 
-## <h2></h2>
-<p></p>
+    type CardProps = {
+        name: string;
+        time: string;
+    }
 
-## <h2></h2>
-<p></p>
+    export function Card(props: CardProps) {
+        return (
+            <div className="card">
+            <strong>{props.name}</strong>
+            <small>{props.time}</small>
+            </div>
+        )
+    }
+
+## <h2>Tipando Estados</h2>
+<p>Para tipar os estados precisamos exportar o <b>type</b> do nosso componente Card.</p>
+
+    export type CardProps = {
+    name: string;
+    time: string;
+    }
+
+- Após a exportação, precisamos importar em nosso arquivo Home.tsx
+
+    import { Card, CardProps } from '../../components/Card';
+
+- E em seguida, passar as propriedades para o nosso estado:
+
+    const [students, setStudents] = useState< CardProps[] >([]);
+
+## <h2>Tipando resposta da API</h2>
+<p>Para a tipagem de resposta da API precisamos criar dois <b>types</b></p>
+
+    type ProfileResponse = {
+        name: string;
+        avatar_url: string;
+    }
+
+    type User = {
+        name: string;
+        avatar: string;
+    }
+
+- Modificar o nosso estado:
+
+    const [students, setStudents] = useState< CardProps[] >([]);
+
+- Importar as propriedades do nosso type no useEffect():
+
+    useEffect(() => {
+        async function fetchData() {
+            const response = await fetch('https://api.github.com/users/rodrigorgtic');
+            const data = await response.json() as ProfileResponse; // add "as ProfileResponse"
+
+            setUser({
+                name: data.name,
+                avatar: data.avatar_url,
+            });
+        }
+
+        fetchData();
+    }, []);
