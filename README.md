@@ -82,27 +82,27 @@
 - < V > → Representando Value 
 - < E > → Representando Element
 
-<p>Exemplo de um trecho de código utilizando generics:</p>
 
 <p>
-function useState< T >() {
-    let state: T;
+Exemplo de um trecho de código utilizando generics:
+    function useState< T >() {
+        let state: T;
 
-    function get(){
-        return state;
+        function get(){
+            return state;
+        }
+
+        function set(newValue: T){
+            state = newValue;
+        }
+
+        return { get, set}
     }
 
-    function set(newValue: T){
-        state = newValue;
-    }
-
-    return { get, set}
-}
-
-let newState = useState();
-newState.get();
-newState.set("João");
-newState.set(123);
+    let newState = useState();
+    newState.get();
+    newState.set("João");
+    newState.set(123);
 </p>
 
 ## <h2></h2>
