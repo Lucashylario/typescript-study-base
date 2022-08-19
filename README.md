@@ -298,11 +298,11 @@
     time: string;
     }
 
-- Após a exportação, precisamos importar em nosso arquivo Home.tsx
+<p>Após a exportação, precisamos importar em nosso arquivo Home.tsx</p>
 
     import { Card, CardProps } from '../../components/Card';
 
-- E em seguida, passar as propriedades para o nosso estado:
+<p>E em seguida, passar as propriedades para o nosso estado:</p>
 
     const [students, setStudents] = useState< CardProps[] >([]);
 
