@@ -319,15 +319,15 @@
         avatar: string;
     }
 
-- Modificar o nosso estado:
+<p>Modificar o nosso estado:<p>
 
     const [students, setStudents] = useState< CardProps[] >([]);
 
-- Importar as propriedades do nosso type no useEffect():
+<p>Importar as propriedades do nosso type no useEffect():<p>
 
     useEffect(() => {
         async function fetchData() {
-        const response = await fetch('https://api.github.com/users/rodrigorgtic');
+        const response = await fetch('https:// api.github.com/users/rodrigorgtic');
         const data = await response.json() as ProfileResponse; // add "as ProfileResponse"
 
         setUser({
