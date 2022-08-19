@@ -327,14 +327,14 @@
 
     useEffect(() => {
         async function fetchData() {
-            const response = await fetch('https://api.github.com/users/rodrigorgtic');
-            const data = await response.json() as ProfileResponse; // add "as ProfileResponse"
+        const response = await fetch('https://api.github.com/users/rodrigorgtic');
+        const data = await response.json() as ProfileResponse; // add "as ProfileResponse"
 
-            setUser({
-                name: data.name,
-                avatar: data.avatar_url,
-            });
-        }
+        setUser({
+            name: data.name,
+            avatar: data.avatar_url,
+        });
+    }
 
         fetchData();
     }, []);
