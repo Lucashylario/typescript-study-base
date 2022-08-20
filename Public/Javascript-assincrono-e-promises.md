@@ -149,14 +149,3 @@
     .then(res => res.json()) //Criar um novo then para converter a informação de repos_url em JSON
     .then(d => console.log(d)) // Retornando dados da repos_url
     .catch( err => console.log(err)) //Caso houver erro em alguma parte co código o catch é acionado
-
-
-## <h2></h2>
-<p></p>
-
-## <h2></h2>
-<p></p>
-
-## <h2></h2>
-<p></p>
-
