@@ -149,3 +149,62 @@
     .then(res => res.json()) //Criar um novo then para converter a informação de repos_url em JSON
     .then(d => console.log(d)) // Retornando dados da repos_url
     .catch( err => console.log(err)) //Caso houver erro em alguma parte co código o catch é acionado
+
+## <h2>Async / Await</h2>
+<p>Exemplo:</p>
+<p>Await serve para devolver a resposta da promises</p>
+
+    const promessa = new Promisse( function( resolve, reject) {
+        return reject('error')
+    })
+
+    async function start() {
+        try {
+            const result = await promessa // await = espera
+            console.log(result)
+        } catch( e ) {
+            console.log(e)
+        } finally {
+            console.log('rodar sempre)
+        }
+    }
+
+    start()
+
+## <h2>Async / Await com Fetch</h2>
+<p>Exemplos corretos que voltam a mesma resposta:</p>
+
+    async function start() {
+        try {
+            const response = await fetch('https://api.url.com')
+            const user = await response.json()
+            const reposResponse = await fetch(user.repos_url) 
+            const repos = await reposResponse.json()
+            console.log(repos)
+        } catch (e) {
+            console.log(e)
+        }
+    } 
+
+    start()
+
+    --------------------------------------------------------
+    async function start() {
+        const response = await fetch('https://api.url.com')
+        const user = await response.json()
+        const reposResponse = await fetch(user.repos_url) 
+        const repos = await reposResponse.json()
+        console.log(repos)
+    } 
+
+    start().catch (e => console.log(e)}
+
+    -----------------------------------------------------------
+    async function start() {
+        const url = "https://api.url.com"
+        const user = await fetch(url).then( r => r.json())
+        const userRepos = await fecth(user.repos_url).then(r => r.json());
+        console.log(userRepos)
+    } 
+
+    start().catch (e => console.log(e)}
