@@ -67,6 +67,20 @@
     })
     .catch( err => console.log(err.message))
 
-## <h2></h2>
-<p></p>
+## <h2>Async / Await com Axios</h2>
+<p>Exemplo:</p>
 
+    import axios from 'axios'
+
+    async function fetchRepos() {
+        // tentar fazer o cod, se der erro na execução é acionado a catch
+        try {
+            const user await axios.get('https://api.url.com/user/lucas)
+            const repos = await axios.get(user.data.repos_url)
+            console.log(repos.data)
+        } catch(e) {
+            console.log(e)
+        }
+    }
+
+    fetchRepos()
